@@ -13,7 +13,8 @@ import HomeBLog from './pages/HomeBlog';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
 import AddPost from './pages/AddPost';
-
+import About from './pages/About';
+import Contact from './pages/Contact';
 
 import Gallery from './pages/Gallery';
 import AddImage from './pages/AddImage';
@@ -51,13 +52,19 @@ function App() {
     
           <div className="container">
             <Route exact path="/">
-              <Home />
+              <HomeBLog />
             </Route>
             <Route exact path="/blog">
               <HomeBLog />
             </Route>
             <Route exact path="/gallery">
               <Gallery />
+            </Route>
+            <Route exact path="/about">
+              <About />
+            </Route>
+            <Route exact path="/contact">
+              <Contact />
             </Route>
             <Route exact path="/add-post">
               <AddPost />
