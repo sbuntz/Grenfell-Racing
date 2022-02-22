@@ -1,9 +1,6 @@
 
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Grid, Card, Chip, Stack, Button, TextField, Typography, Autocomplete } from '@mui/material';
-import { FormikProvider } from 'formik';
-import { LoadingButton } from '@mui/lab';
 import SideHeader from "../components/SideHeader";
 import HeaderTwo from "../components/HeaderTwo/index";
 import { ADD_POST } from '../utils/mutations';

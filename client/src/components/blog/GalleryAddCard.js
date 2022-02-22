@@ -1,32 +1,23 @@
 import PropTypes from 'prop-types';
 import { Icon } from '@iconify/react';
 import eyeFill from '@iconify/icons-eva/eye-fill';
-import { Link as RouterLink } from 'react-router-dom';
 import shareFill from '@iconify/icons-eva/share-fill';
 import messageCircleFill from '@iconify/icons-eva/message-circle-fill';
-// material
+
 import { alpha, styled } from '@mui/material/styles';
-import { Box, Link, Card, Grid, Avatar, Typography, CardContent } from '@mui/material';
-// utils
-import { fDate } from '../../utils/formatTime';
+import { Box, Card, Grid, Avatar, Typography, CardContent } from '@mui/material';
+
 import { fShortenNumber } from '../../utils/formatNumber';
-//
+
 import SvgIconStyle from '../SvgIconStyle';
 
-// ----------------------------------------------------------------------
 
 const CardMediaStyle = styled('div')({
   position: 'relative',
   paddingTop: 'calc(100% * 3 / 4)'
 });
 
-const TitleStyle = styled(Link)({
-  height: 44,
-  overflow: 'hidden',
-  WebkitLineClamp: 2,
-  display: '-webkit-box',
-  WebkitBoxOrient: 'vertical'
-});
+
 
 const AvatarStyle = styled(Avatar)(({ theme }) => ({
   zIndex: 9,
@@ -60,7 +51,7 @@ BlogPostCard.propTypes = {
 };
 
 export default function BlogPostCard({ post, index }) {
-  const { cover, title, view, comment, share, author, createdAt } = post;
+  const { cover, title, view, comment, share, author } = post;
   const latestPostLarge = index === 0;
   const latestPost = index === 1 || index === 2;
 

@@ -1,7 +1,6 @@
 import React, {Fragment, useEffect} from 'react';
 import Scrollbar from 'perfect-scrollbar-react';
 import 'perfect-scrollbar-react/dist/style.min.css';
-import Logo from "../logo";
 import NavItem from "../navbar/NavItem";
 import socialicons from '../../data/social-networks'
 import { Link } from 'react-router-dom';

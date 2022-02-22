@@ -1,15 +1,9 @@
 import React from 'react';
 import HeaderContainer from "./container";
-import Logo from "../logo";
-
-import Auth from '../../utils/auth';
 
 
 const HeaderTwo = () => {
-    const logout = (event) => {
-        event.preventDefault();
-        Auth.logout();
-      };
+ 
       
     const openSideMenu = ()=>{
         const sideMenuWrap = document.querySelector(".side-header");
@@ -21,7 +15,7 @@ const HeaderTwo = () => {
     return (
         <HeaderContainer classes={'d-lg-none'}>
             <div className="header-logo mt-40 mb-40 col">
-                <Logo sideHeader={true}/>
+    
             </div>
 
             <div className="header-toggle-btn col">
