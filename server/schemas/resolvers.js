@@ -27,13 +27,6 @@ const resolvers = {
       }
       throw new AuthenticationError("You need to be logged in!");
     },
-    articles: async () => {
-      const result = await axios.get(
-        "https://newsapi.org/v2/top-headlines?language=en&category=grenfell&apiKey="
-      );
-      console.log(result);
-      return result.data.articles;
-    },
     messages: () => messages,
   },
 
