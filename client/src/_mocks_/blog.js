@@ -1,8 +1,4 @@
 import faker from 'faker';
-// utils
-import { mockImgCover } from '../utils/mockImages';
-
-// ----------------------------------------------------------------------
 
 const POST_TITLES = [
   'oluptatem accusantium doloremque laudantium, totam rem aperiam.',
