@@ -1,47 +1,82 @@
-import React from "react";
-import { createMuiTheme } from "@material-ui/core";
-import { ThemeProvider } from "@material-ui/styles";
-import { BrowserRouter } from "react-router-dom";
-import { MainLayout } from "./layouts";
-import { themeL, themeD } from "./themes";
-import { mainNavigation, mainRoutes } from "./data";
-import { RoutesWithLayout } from "./components";
+import React from 'react';
+import {
+  ApolloClient,
+  InMemoryCache,
+  ApolloProvider,
+  createHttpLink,
+} from '@apollo/client';
+import { setContext } from '@apollo/client/link/context';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 
-const App = () => {
-  const [darkMode, setDarkMode] = React.useState(() => {
-    const dark = localStorage.getItem("dark");
-    if (dark) {
-      return JSON.parse(dark);
-    } else {
-      return false;
-    }
-  });
+import Home from './pages/Home';
+import HomeBLog from './pages/HomeBlog';
+import Signup from './pages/Signup';
+import Login from './pages/Login';
+import AddPost from './pages/AddPost';
 
-  const darkModeToggle = () => {
-    setDarkMode(!darkMode);
-    localStorage.setItem("dark", !darkMode);
+
+import Gallery from './pages/Gallery';
+import AddImage from './pages/AddImage';
+
+
+// Construct our main GraphQL API endpoint
+const httpLink = createHttpLink({
+  uri: '/graphql',
+});
+
+// Construct request middleware that will attach the JWT token to every request as an `authorization` header
+const authLink = setContext((_, { headers }) => {
+  // get the authentication token from local storage if it exists
+  const token = localStorage.getItem('id_token');
+  // return the headers to the context so httpLink can read them
+  return {
+    headers: {
+      ...headers,
+      authorization: token ? `Bearer ${token}` : '',
+    },
   };
+});
 
-  const themeSwitchCofig = {
-    state: darkMode,
-    handler: darkModeToggle,
-  };
+const client = new ApolloClient({
+  // Set up our client to execute the `authLink` middleware prior to making the request to our GraphQL API
+  link: authLink.concat(httpLink),
+  cache: new InMemoryCache(),
+});
 
-  const appliedTheme = createMuiTheme(themeL);
+function App() {
   return (
-    <BrowserRouter>
-      <ThemeProvider theme={appliedTheme}>
-        <RoutesWithLayout
-          layout={MainLayout}
-          routes={mainRoutes}
-          LayoutProps={{
-            navigationData: mainNavigation,
-            themeConfig: themeSwitchCofig,
-          }}
-        />
-      </ThemeProvider>
-    </BrowserRouter>
+    <ApolloProvider client={client}>
+      <Router>
+        <div className="flex-column justify-flex-start min-100-vh">
+    
+          <div className="container">
+            <Route exact path="/">
+              <Home />
+            </Route>
+            <Route exact path="/blog">
+              <HomeBLog />
+            </Route>
+            <Route exact path="/gallery">
+              <Gallery />
+            </Route>
+            <Route exact path="/add-post">
+              <AddPost />
+              <Route exact path="/add-image">
+              < AddImage/>
+            </Route>
+            </Route>
+            <Route exact path="/login">
+              <Login />
+            </Route>
+            <Route exact path="/signup">
+              <Signup />
+            </Route>
+          </div>
+      
+        </div>
+      </Router>
+    </ApolloProvider>
   );
-};
+}
 
 export default App;

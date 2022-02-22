@@ -1,7 +1,7 @@
 [
   {
-    "username": "Alan Kay",
-    "email": "alan@email.com",
+    "username": "David Anderson",
+    "email": "anderson@email.com",
     "password": "password01"
   },
   {
@@ -10,13 +10,13 @@
     "password": "password01"
   },
   {
-    "username": "David Anderson",
-    "email": "anderson@email.com",
+    "username": "Drew Steven",
+    "email": "drew@email.com",
     "password": "password01"
   },
   {
-    "username": "David Thomas",
-    "email": "david.thomas@email.com",
+    "username": "Stefanie Buntz",
+    "email": "buntz@email.com",
     "password": "password01"
   }
 ]
