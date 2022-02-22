@@ -1,0 +1,22 @@
+[
+  {
+    "username": "Alan Kay",
+    "email": "alan@email.com",
+    "password": "password01"
+  },
+  {
+    "username": "Lauren Grenfell",
+    "email": "grenfell@email.com",
+    "password": "password01"
+  },
+  {
+    "username": "David Anderson",
+    "email": "anderson@email.com",
+    "password": "password01"
+  },
+  {
+    "username": "David Thomas",
+    "email": "david.thomas@email.com",
+    "password": "password01"
+  }
+]
