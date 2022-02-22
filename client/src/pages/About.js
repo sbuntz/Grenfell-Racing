@@ -1,10 +1,9 @@
 import React from 'react';
-import { Stack } from '@mui/material';
-// File imported
-import SideHeader from "../components/SideHeader/index";
+
+import SideHeader from "../components/sideHeader/index";
 import HeaderTwo from "../components/Header/index";
 
-import {Container, Row, Col} from 'react-bootstrap'
+import {Container } from 'react-bootstrap'
 const HomeBlog = () => {
     return (
         <div className={'main-wrapper has-side-header'}>

@@ -1,18 +1,13 @@
-import React, {useState} from 'react';
-
+import React from 'react';
 
 import { Link as RouterLink } from 'react-router-dom';
 import { Grid, Button, Container, Stack } from '@mui/material';
 import  BlogPostCard  from '../components/blog/BlogPostCard';
 
-import POSTS from '../_mocks_/blog';
-
-
+import posts from '../_mocks_/blog';
 import Iconify from '../components/Iconify';
-
-// File imported
-import SideHeader from "../components/SideHeader";
-import HeaderTwo from "../components/Header/index";
+import SideHeader from "../components/sideHeader";
+import HeaderTwo from "../components/header/index";
 
 const HomeBlog = () => {
     return (
@@ -35,7 +30,7 @@ const HomeBlog = () => {
 
       
         <Grid container spacing={3}>
-          {POSTS.map((post, index) => (
+          {posts.map((post, index) => (
             <BlogPostCard key={post.id} post={post} index={index} />
           ))}
         </Grid>
