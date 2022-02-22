@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import SideHeader from "../components/sideHeader";
-import HeaderTwo from "../components/Header/index";
+import HeaderTwo from "../components/header";
 import { useMutation } from '@apollo/client';
 import { ADD_USER } from '../utils/mutations';
 

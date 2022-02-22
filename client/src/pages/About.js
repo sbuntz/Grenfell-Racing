@@ -1,7 +1,7 @@
 import React from 'react';
 
-import SideHeader from "../components/sideHeader/index";
-import HeaderTwo from "../components/Header/index";
+import SideHeader from "../components/sideHeader";
+import HeaderTwo from "../components/header";
 
 import {Container } from 'react-bootstrap'
 const HomeBlog = () => {

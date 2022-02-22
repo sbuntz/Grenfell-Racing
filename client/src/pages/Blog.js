@@ -7,7 +7,7 @@ import  BlogPostCard  from '../components/blog/BlogPostCard';
 import posts from '../_mocks_/blog';
 import Iconify from '../components/Iconify';
 import SideHeader from "../components/sideHeader";
-import HeaderTwo from "../components/header/index";
+import HeaderTwo from "../components/header";
 
 const HomeBlog = () => {
     return (
