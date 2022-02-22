@@ -2,7 +2,7 @@ import React from 'react';
 import { Stack } from '@mui/material';
 // File imported
 import SideHeader from "../components/SideHeader/index";
-import HeaderTwo from "../components/HeaderTwo/index";
+import HeaderTwo from "../components/Header/index";
 
 import {Container, Row, Col} from 'react-bootstrap'
 const HomeBlog = () => {

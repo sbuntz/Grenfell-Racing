@@ -1,44 +1,28 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import HeaderContainer from "./container";
 
-import Auth from '../../utils/auth';
 
-const Header = () => {
-  const logout = (event) => {
-    event.preventDefault();
-    Auth.logout();
-  };
-  return (
-    <header className="bg-primary text-light mb-4 py-3 flex-row align-center">
-      <div className="container flex-row justify-space-between-lg justify-center align-center">
-        <div>
-          <Link className="text-light" to="/">
-            <h1 className="m-0">Project Name</h1>
-          </Link>
-          <p className="m-0">This is a sub-title</p>
-        </div>
-        <div>
-          {Auth.loggedIn() ? (
-            <>
-              <span>Hey there, {Auth.getProfile().data.username}!</span>
-              <button className="btn btn-lg btn-light m-2" onClick={logout}>
-                Logout
-              </button>
-            </>
-          ) : (
-            <>
-              <Link className="btn btn-lg btn-info m-2" to="/login">
-                Login
-              </Link>
-              <Link className="btn btn-lg btn-light m-2" to="/signup">
-                Signup
-              </Link>
-            </>
-          )}
-        </div>
-      </div>
-    </header>
-  );
+const HeaderTwo = () => {
+ 
+      
+    const openSideMenu = ()=>{
+        const sideMenuWrap = document.querySelector(".side-header");
+        const overlay = document.querySelector('.side-menu-overlay');
+        sideMenuWrap.classList.add('side-menu-open');
+        overlay.classList.add('overlay-show');
+    };
+
+    return (
+        <HeaderContainer classes={'d-lg-none'}>
+            <div className="header-logo mt-40 mb-40 col">
+    
+            </div>
+
+            <div className="header-toggle-btn col">
+                <button className="side-header-toggle" onClick={()=> openSideMenu()}><span/></button>
+            </div>
+        </HeaderContainer>
+    );
 };
 
-export default Header;
+export default HeaderTwo;

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 import { LOGIN_USER } from '../utils/mutations';
 import SideHeader from "../components/SideHeader";
-import HeaderTwo from "../components/HeaderTwo/index";
+import HeaderTwo from "../components/Header/index";
 import Auth from '../utils/auth';
 
 const Login = (props) => {

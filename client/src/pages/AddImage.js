@@ -3,7 +3,7 @@ import { Link as RouterLink } from 'react-router-dom';
 import { Grid, Card, Stack, Button, TextField } from '@mui/material';
 import { FormikProvider } from 'formik';
 import SideHeader from "../components/SideHeader";
-import HeaderTwo from "../components/HeaderTwo/index";
+import HeaderTwo from "../components/Header/index";
 
 export default function LoginForm() {
 

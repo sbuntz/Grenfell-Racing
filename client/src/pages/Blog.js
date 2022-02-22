@@ -1,24 +1,32 @@
 import React, {useState} from 'react';
 
+
 import { Link as RouterLink } from 'react-router-dom';
 import { Grid, Button, Container, Stack } from '@mui/material';
-import  BlogPostCard  from '../../components/blog/BlogPostCard';
+import  BlogPostCard  from '../components/blog/BlogPostCard';
 
-import POSTS from '../../_mocks_/blog';
-
-
-import Iconify from '../../components/Iconify';
+import POSTS from '../_mocks_/blog';
 
 
-const ContentHomeBlogPage = () => {
+import Iconify from '../components/Iconify';
+
+// File imported
+import SideHeader from "../components/SideHeader";
+import HeaderTwo from "../components/Header/index";
+
+const HomeBlog = () => {
     return (
-        <div className="content-body section custom-scroll">
-              <Container>
+        <div className={'main-wrapper has-side-header'}>
+            <HeaderTwo/>
+            <SideHeader mobile={false}/>
+            <div className="content-body section custom-scroll">
+            <div className="section-wrap section pb-100"></div>
+              <Container mb={5}>
         <Stack direction="row" alignItems="center" justifyContent="space-between" mb={5}>
         <Button
               variant="contained"
               component={RouterLink}
-             to="/postadd"
+             to="/add-post"
               startIcon={<Iconify icon={'eva:plus-fill'} />}
             >
               New Post
@@ -33,7 +41,8 @@ const ContentHomeBlogPage = () => {
         </Grid>
       </Container>
         </div>
+        </div>  
     );
 };
 
-export default ContentHomeBlogPage;
+export default HomeBlog;

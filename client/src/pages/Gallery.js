@@ -12,7 +12,7 @@ import Iconify from '../components/Iconify';
 
 // File imported
 import SideHeader from "../components/SideHeader";
-import HeaderTwo from "../components/HeaderTwo/index";
+import HeaderTwo from "../components/Header/index";
 
 const HomeBlog = () => {
     return (
