@@ -13,7 +13,7 @@
 
 
 ## Description
-A website that allows you to update postd, profile and images without having to know how to code or spend the money on website build sites. 
+A website that allows you to update posts, profile and images without having to know how to code or spend the money on website build sites. 
 
 ![default](default.png)
 
